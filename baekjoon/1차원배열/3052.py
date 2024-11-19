@@ -8,5 +8,5 @@ removed_dupl_list = set(divided_list)
 
 print(len(removed_dupl_list))
 
-
+# print(len(set(divided_list)))
 
