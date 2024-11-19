@@ -12,5 +12,9 @@ for j in range(B):
     basket_num_list[C-1] = b
     basket_num_list[D-1] = a
 
+    # 이렇게도 가능
+    # basket_num_list[C-1], basket_num_list[D-1] = basket_num_list[D-1], basket_num_list[C-1]
+
+
 for k in range(A):
     print(basket_num_list[k], end=' ')
