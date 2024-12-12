@@ -4,6 +4,7 @@ C = input()
 
 D = B.split()
 
+print(D)
 count = 0
 # for i in range(A):
 #     if D[i] == C:
@@ -27,4 +28,16 @@ print(count)
 
 # print(n_list.count(v))
 
+# 복습
 
+count = 0
+
+A = int(input())
+B = list(map(int, input().split()))
+C = int(input())
+
+for i in range(len(B)):
+    if B[i] == C:
+        count+=1
+
+print(count)
