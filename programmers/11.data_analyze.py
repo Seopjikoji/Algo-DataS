@@ -25,4 +25,5 @@ a = solution(
     20300501,
     "remain",
 )
+
 print(a)
