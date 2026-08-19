@@ -24,21 +24,21 @@ def solution(keymap, targets):
                     else:
                         count_dict[k] = min(count_dict[k], j + 1)
 
-    print(count_dict)
+    # print(count_dict)
     # 최소 횟수 집계 배열
     min_list = []
 
     for i in targets:
         # 최소 횟수
         min_count = 0
-        print(i)
+        # print(i)
         for j in i:
             if count_dict[j] == 0:
-                min_list.append(-1)
+                min_count = - 1
                 break
             else:
                 min_count += count_dict[j]
-        min_list.append(-1 if min_count == 0 else min_count)
+        min_list.append(min_count)
 
     return min_list
 
