@@ -24,6 +24,11 @@ def solution(s):
             start = min(i + 1, len(s) - 1)
             x = s[start]
 
+            # 초기화 범위 제한
+            # if i + 1 < len(s):
+            #     start = i + 1
+            #     x = s[start]
+
             # 따로 초기화 안해도 됨, 어차피 같아지는 순간에는 멈출거고 이 상태에서 시작하면 초기화 한거랑 똑같은 효과, 다르면 계속 다르게 감
             count = [0, 0]
         
