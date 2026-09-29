@@ -43,8 +43,7 @@ def solution(new_id):
     
     # 한번 더 추가(문제 보기에 나와 있음)
     # - 인덱스로 할 수 있는 방법은 없으려나 ??  
-    if len(rec_id) != 0 and rec_id[-1] == '.':
-        rec_id = rec_id[0:len(rec_id)-1]
+    rec_id = rec_id.rstrip('.')
 
     # 7단계(2글자 이하면 마지막 글자를 길이가 3될 떄까지 이어붙임)
     while(len(rec_id)<3):
