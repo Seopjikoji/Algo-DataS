@@ -29,20 +29,14 @@ def solution(new_id):
         else:
             thd_id += v
     rec_id = thd_id    
-        # if i !=0 and rec_id[i-1] == '.' and rec_id[i] == '.':
-        #     rec_id = rec_id[0:i]+rec_id[i+1:len(rec_id)+1]
-    # 4단계(맨앞, 맨뒤 . 제거)
-    if len(rec_id) != 0 and rec_id[0] == '.':
-        rec_id = rec_id[1:]
 
-    # - 인덱스로 할 수 있는 방법은 없으려나 ??  
-    if len(rec_id) != 0 and rec_id[-1] == '.':
-        rec_id = rec_id[0:len(rec_id)-1]
+    # 4단계(맨앞, 맨뒤 . 제거)
+    rec_id = rec_id.strip('.')
 
     # 5단계(빈 문자열이면 a 로 대체)
     if rec_id == '':
         rec_id = 'a'
-
+    
     # 6단계(16자 이상이면 처음부터 15까지만 남김)
     if(len(rec_id) > 15):
         rec_id = rec_id[0:15]
@@ -52,14 +46,11 @@ def solution(new_id):
     if len(rec_id) != 0 and rec_id[-1] == '.':
         rec_id = rec_id[0:len(rec_id)-1]
 
-
     # 7단계(2글자 이하면 마지막 글자를 길이가 3될 떄까지 이어붙임)
     while(len(rec_id)<3):
         rec_id += rec_id[-1]
 
     return rec_id
 
-    # print(rec_id)
-
-a = solution("abcdefghijklmn.p")
+a = solution("...!@BaT#*..y.abcdefghijklm")
 print(a)
