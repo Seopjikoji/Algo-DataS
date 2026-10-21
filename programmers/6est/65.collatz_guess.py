@@ -3,7 +3,7 @@ def solution(num):
     # 반복되는 횟수 변수 초기화
     repeat_count = 0
 
-    while repeat_count <= 500:
+    while repeat_count < 500:
         if num == 1:
             return 0
         
@@ -20,7 +20,7 @@ def solution(num):
         if num == 1:
             return repeat_count
 
-    if repeat_count > 500:
+    if repeat_count == 500:
         return -1
 
 a = solution(6)
