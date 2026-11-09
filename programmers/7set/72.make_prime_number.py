@@ -12,8 +12,9 @@ def solution(nums):
         
         # 약수 배열 초기화
         divisor = []
-
-        for i in range(1, int(sum ** 1/2)+1):
+        
+        for i in range(1, int(sum ** (1/2))+1):
+            print(i)
             if sum % i == 0:
                 divisor.append(i)
                 if i != (sum // i):
