@@ -13,12 +13,12 @@ def solution(nums):
         # 약수 배열 초기화
         divisor = []
 
-        for i in range(1, int(sum ** 1/2)):
+        for i in range(1, int(sum ** 1/2)+1):
             if sum % i == 0:
                 divisor.append(i)
                 if i != (sum // i):
                     divisor.append(sum // i)
-                    
+
         if len(divisor) == 2:
             prime_count += 1
 
