@@ -2,9 +2,6 @@ import re
 
 def solution(dartResult):
 
-    # 정답
-    sum = 0
-
     # 이전 점수 초기화 변수
     before = 0
 
@@ -14,40 +11,37 @@ def solution(dartResult):
     parsed = re.findall(r"\d+[SDT][*#]?", dartResult)
 
     # 점수표
-    # first = 0
-    # second = 0
-    # third = 0
+    score_list = [0, 0, 0]
 
     # print(parsed)
-    # 순회하면서 값 가져오기, 일단 split을 해볼까
-    for i in parsed:
-        
-        # 점수 초기화
-        score = 0
 
+    # 순회하면서 값 가져오기, 일단 split을 해볼까
+    for index, i in enumerate(parsed):
+        
         # 숫자 초기화
         num = ''
 
-        for j in i:
-            if j.isdigit():
-                num += j
-            elif j in ['S', 'D', 'T']:
-                score = int(num) ** space_dict[j]
+        # 점수 초기화
+        score = 0
+
+        for value in i:
+            if value.isdigit():
+                num += value
+            elif value in ['S', 'D', 'T']:
+                score = int(num) ** space_dict[value]
             else:
-                if j == '*':
-                    before *= 2
+                # 옵션 적용
+                if value == '*':
+                    # before *= 2
                     score *= 2
+                    if index != 0:
+                        before = score_list[index-1] * 2
+                        score_list[index-1] = before
                 else:
                     score *= -1
-        print(score)
-        sum += score
-        before = score
+            score_list[index] = score
 
-    return sum    
+    return sum(score_list)    
 
-    # for i in dartResult:
-        # if int(i) = int:
-
-
-a = solution('1S2D*3T')
+a = solution('1S*2T*3S')
 print(a)
