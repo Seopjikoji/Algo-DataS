@@ -9,6 +9,7 @@ def solution(array, commands):
 
         # 오름차순 정렬
         num_list.sort()
+        
         # k번째 수
         answer.append(num_list[i[2]-1])
 
